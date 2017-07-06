@@ -1,0 +1,27 @@
+# Introduction {#intro}
+```{r}
+library(knitr)
+file.exists(here::here("Rcode_chunks.R"))
+knitr::read_chunk(here::here("Rcode_chunks.R"))
+
+```
+
+You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
+```
+
+```{r nice-tab, fig.capture="here is a table", tidy=FALSE}
+```
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+
+
+```{r nice-tab2,  fig.capture="Here is another table.", tidy=FALSE}
+```
+
+This would suggest that you can also label tables, with the `tab:` prefix, e.g., see Table  \@ref(tab:nice-tab) and Table \@ref(tab:nice-tab2) 
+
+You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
